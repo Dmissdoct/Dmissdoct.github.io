@@ -1,0 +1,3 @@
+INSERT INTO `dede_flink` VALUES('1','1','http://www.mubanzhijia.com','织梦官方网站','','','','1226375403','1','2');
+INSERT INTO `dede_flink` VALUES('2','1','http://www.mubanzhijia.com','织梦模板之家','','','','1493950576','1','1');
+INSERT INTO `dede_flink` VALUES('3','1','http://www.mubanzhijia.com','织梦行业模板','','','','1493950584','1','1');

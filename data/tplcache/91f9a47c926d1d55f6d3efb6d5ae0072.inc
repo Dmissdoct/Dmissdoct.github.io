@@ -1,0 +1,1 @@
+<li> <a href="[field:arcurl/]" class="mod-board__top-notice" target="_blank" >[field:title function='cn_substr(@me,25)'/]</a> </li>

@@ -1,0 +1,1 @@
+<img src='/images/defaultpic.gif' border='0' width='120' height='120' alt='直通车公开课视频'>

@@ -1,0 +1,1 @@
+<a href="[field:typelink /]" class="mod-nav__link-nav-first" target="_blank" >√¿π§</a>

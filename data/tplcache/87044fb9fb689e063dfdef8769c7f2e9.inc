@@ -1,0 +1,1 @@
+<a href="[field:typelink /]">¹«¿ª¿Î</a>

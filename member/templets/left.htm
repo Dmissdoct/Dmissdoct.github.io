@@ -1,0 +1,52 @@
+
+
+<div class="ucenter-left account-left-border">
+  <div class="ucneter-l-head cf">
+    <div class="ulhead-headicon"> <img src="<?php echo $cfg_ml->fields['face']; ?>" width="100" height="100" alt="您的形象"/></div>
+    <div class="ulhead-info">
+      <p class="ulhead-info-uname"><?php echo $cfg_ml->M_LoginID; ?></p>
+      <p class="ulhead-info-vip">
+      <?php
+
+    $MemberType = ""; 
+    $dsql->SetQuery("Select rank,membername From `#@__arcrank` where rank>0");
+	$dsql->Execute('m');
+    $MemberType[限制会员] = "0";                     
+    while($mrow = $dsql->GetObject('m')){
+	     $MemberType[$mrow->membername] = $mrow->rank;
+    }
+
+	$MemberTypes = "";
+	$dsql->SetQuery("SELECT * FROM `#@__member_rank` WHERE mid='".$cfg_ml->M_ID."' ");
+	$dsql->Execute('n');                    
+    while($nrow = $dsql->GetObject('n')){
+	     $MemberTypes[$nrow->rank] = $nrow->rank;
+    }
+	foreach($MemberType as $v=>$k)
+    {
+    
+		$dbs = in_array($k, $MemberTypes);
+		if($dbs==1) {
+
+			echo "".$v."&nbsp;";
+		}
+	}
+  ?>
+      </p>
+      <div class="ulhead-info-tool"> <a class="ulhead-icon icon-lock ucenter-mail " href="edit_baseinfo.php" title="修改密码" jktag="&posGP=115005&posOper=56002&posArea=0001">
+        <div class="ucenter-mail-tip">修改密码</div>
+        </a> <a class="ulhead-icon icon-email ucenter-mail icon-mail-click" href="#" jktag="&posGP=115002&posOper=56003&posArea=0001"><i style="display: none;"></i>
+        <div class="ucenter-mail-tip" style="display: none;">验证邮箱可<span>获赠1天VIP</span></div>
+        </a> <a href="edit_fullinfo.php" class="ulhead-icon icon-setting ucenter-mail" title="设置个人信息" jktag="&posGP=115005&posOper=56005&posArea=0001"></a> </div>
+    </div>
+  </div>
+  <div class="ucenter-l-list">
+    <ul class="ullist-ul">
+      <li <?php echo ($menutype == 'mydede')? 'class="thisApp"' : "" ;?>><a href="../member/" title="个人中心">个人中心</a></li>
+      <li <?php echo ($menutype == 'myvip')? 'class="thisApp"' : "" ;?>><a href="../member/" title="成为VIP">成为VIP</a></li>
+      <li <?php echo ($menutype == 'myf')? 'class="thisApp"' : "" ;?>><a href="../member/" title="我的F码">我的F码</a></li>
+      <li <?php echo ($menutype == 'config')? 'class="thisApp"' : "" ;?>><a href="../member/edit_baseinfo.php" title="账号设置">账号设置</a></li>
+      <li <?php echo ($menutype == 'myfen')? 'class="thisApp"' : "" ;?>><a href="../member/" title="我的F码">我的分销</a></li>
+    </ul>
+  </div>
+</div>

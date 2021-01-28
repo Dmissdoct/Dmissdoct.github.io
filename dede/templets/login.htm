@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><style type="text/css" id="__360se6_success_css"></style><head><meta http-equiv="Content-Type" content="text/html; charset=gbk">
+
+<title>会员登录</title>
+
+<link href="img/style.css" rel="stylesheet" type="text/css">
+
+<script src="../include/js/jquery/jquery.js" language="javascript" type="text/javascript"></script>
+<script type="text/javascript">
+$ = jQuery;
+function changeAuthCode() {
+	var num = 	new Date().getTime();
+	var rand = Math.round(Math.random() * 10000);
+	num = num + rand;
+	$('#ver_code').css('visibility','visible');
+	if ($("#vdimgck")[0]) {
+		$("#vdimgck")[0].src = "../include/vdimgck.php?tag=" + num;
+	}
+	return false;	
+}
+</script>
+</head>
+
+<body>
+<div class="page">
+  <div class="left">
+  <img src="img/left.jpg" width="450" height="350"> 
+  <div class="l_txt">
+  	<h1>后台管理登录入口</h1>
+    <p>输入您的账号以及密码，轻松管理网站。</p>
+  </div>
+  </div>
+  <div class="right">
+  	<h1>网站管理系统</h1>
+    <div class="form_box">
+   	  <form name="form1" method="post" action="login.php">
+	   <input type="hidden" name="gotopage" value="<?php if(!empty($gotopage)) echo RemoveXSS($gotopage);?>" />
+      <input type="hidden" name="dopost" value="login" />
+      <input name='adminstyle' type='hidden' value='newdedecms' />
+	  
+       	  <div class="td_txt">输入您的用户名</div>
+          <div class="txt_input"><input name="userid" type="text" class="form_01" placeholder="Usename"/></div>
+		 
+		
+	
+		 <div class="mm">输入您的密码</div>
+          <div class="txt_input"><input name="pwd" type="password" placeholder="Password" class="form_01"></div>
+          <div class="td_txt">
+		     </div>
+			 
+			   <div class="yzm">
+		 <?php
+			if(preg_match("/6/",$safe_gdopen))
+			{
+		?> <div class="mm">输入验证码</div>
+		<input id="vdcode" type="text" name="validate" class="yzm-1"/><img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/><a href="#" onClick="changeAuthCode();" style="color:#666;">看不清楚</a>
+	<?php
+		}
+	?>
+		  </div>
+		  
+		  
+		
+          <div class="txt_input"><input name="提交" type="submit" value="登录" class="form_02"></div>
+		<div class="txt_input"><font style="color:#ff0000"></font></div>
+        </form>
+    </div>
+    <div class="help_box">
+   	 
+      <p><a href="http://www.xiangben.com/" target="_blank">技术支持：祥奔科技</a></p>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+</body></html>

@@ -1,0 +1,1 @@
+INSERT INTO `dede_homepageset` VALUES('huxiuvip/index.htm','../index.html','1');

@@ -1,0 +1,1 @@
+<a href="[field:typelink /]" class="mod-nav__link-nav-hot" target="_blank">选款货源</a>

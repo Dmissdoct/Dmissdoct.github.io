@@ -1,0 +1,1 @@
+<a id="js-course-list" href="[field:typelink /]" class="mod-nav__course-all" target="_blank"> <i class="icon-hamburg"> </i> <span>È«²¿¿Î³Ì</span> </a>

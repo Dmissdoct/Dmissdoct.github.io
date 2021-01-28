@@ -1,0 +1,1 @@
+<img src='http://www.huxiuvip.com/uploads/150612/1-1506122305353V.jpg' border='0' width='120' height='120' alt='美工班公开课视频'>

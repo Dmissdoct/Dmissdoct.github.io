@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{dede:field.seotitle /}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/css/style2015.css" rel="stylesheet" type="text/css" />
+<link href="{dede:global.cfg_templets_skin/}/css/news2.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<!--top1开始--> 
+{dede:include filename="top1.htm"/} 
+<!--top1结束--> 
+<!--banner-->
+<div class="blank10"></div>
+<div class="clear"></div>
+<div class="lm_sobar">
+  <div class="lm_sobar_l left topbread_jquery"><span>资讯</span>{dede:type typeid='126'}<a href="[field:typelink /]">电商新闻</a>{/dede:type}{dede:type typeid='155'}<a href="[field:typelink /]">店铺诊断</a>{/dede:type}{dede:type typeid='129'}<a href="[field:typelink /]">淘宝客服</a>{/dede:type}{dede:type typeid='128'}<a href="[field:typelink /]">淘宝装修</a>{/dede:type}{dede:type typeid='127'}<a href="[field:typelink /]"> 淘宝开店</a>{/dede:type}{dede:type typeid='132'}<a href="[field:typelink /]">电商人物</a>{/dede:type}{dede:type typeid='133'}<a href="[field:typelink /]">移动电商</a>{/dede:type}</div>
+</div>
+
+<!--分割结束-->
+<div class="newslist">
+  <div class="place"> <strong>当前位置:</strong> {dede:field name='position'/} </div>
+  <div class="newsright">
+    <ul class="e2">
+      {dede:list pagesize='10'}
+      <li> [field:array runphp='yes']@me = (empty(@me['litpic']) ? "" : "<a href='{@me['arcurl']}' class='preview'><img src='{@me['litpic']}'/></a>"); [/field:array]
+        [<b>[field:typelink/]</b>] <a href="[field:arcurl/]" class="title">[field:title/]</a> <span > <span>日期：</span>[field:pubdate function="GetDateTimeMK(@me)"/] <span style="margin-left:5px;">点击：</span>[field:click/] <span style="margin-left:5px;">好评：</span>[field:scores/] </span>
+        <p style="color:#888;"> [field:description/]... </p>
+      </li>
+      {/dede:list}
+    </ul>
+    
+    <!-- /listbox -->
+    <div class="dede_pages">
+      <ul class="pagelist">
+        {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+      </ul>
+    </div>
+  </div>
+  <div style="float:right;width:290px;">
+    <div class="newslistright">
+      <p>最热课程推荐</p>
+      <ul>
+        {dede:arclist row=7 orderby=pubdate type='image.' typeid='1'}
+        <li><span>[field:global.autoindex/]</span><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></li>
+        {/dede:arclist}
+      </ul>
+    </div>
+    <div class="newslistright2">
+      <p>最热课程推荐</p>
+      <ul>
+        {dede:arclist row=4 orderby=pubdate type='image.' typeid='1'}
+        <li> <a href="[field:arcurl/]" title="[field:title/]" target="_blank" >[field:image/]<span class="v_ishd">高清</span><span class="v_time">41:18</span><span class="v_bg"></span></a><span><a href="[field:arcurl/]" target="_blank">[field:title/]</a></span> </li>
+        {/dede:arclist}
+      </ul>
+    </div>
+    <div class="newslistrighttag">
+      <p>相关标签</p>
+      <ul>
+        {dede:tag row='30' getall='1'}
+        <li><a href="[field:link/]" target="_blank" style="color:#fe7d39">[field:tag /]</a></li>
+        {/dede:tag}
+      </ul>
+    </div>
+  </div>
+</div>
+<!--footer1开始--> 
+{dede:include filename="footer1.htm"/} 
+<!--footer1结束--> 
+<!--footer2开始--> 
+{dede:include filename="footer2.htm"/} 
+<!--footer2结束-->
+</body>
+</html>

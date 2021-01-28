@@ -1,0 +1,140 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>{dede:field.seotitle /}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="{dede:global.cfg_templets_skin/}/css/style2015.css" rel="stylesheet" type="text/css" />
+<link href="{dede:global.cfg_templets_skin/}/css/news2.css" rel="stylesheet" type="text/css" />
+<script src="{dede:global.cfg_templets_skin/}/js/jquery.min.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/js/settab.js" type="text/javascript"></script>
+
+<body>
+<!--top1开始-->
+{dede:include filename="top1.htm"/}
+<!--top1结束-->
+<!--面包屑导航开始-->
+<script type="text/javascript">
+$(function(){
+	$(".rmkcul a li").live("click",function(){
+		$(".rmkcul a li").removeClass("h3on");
+		$(this).css("background","red");
+	})
+})
+</script>
+<div class="mbxdh_bg">
+	<ul>	
+    	<li>当前位置：</li>
+        <li>{dede:field name='position'/}</li>
+    </ul>
+</div>
+
+<!--面包屑导航结束-->
+<!--分类开始-->
+<div id="fenlei" class="TabbedPanels">
+<!--视频列表开始-->
+<div class="blank10"></div><div class="clear"></div>
+<div class="shipinliebiao_bg gongkaike">
+   <div class="box">
+	<div class="index_middle">
+    <div class="index_middle_title">
+    	<h1>{dede:type typeid='1'}<a href="[field:typelink /]">热门课程</a>{/dede:type}</h1>
+        <h3>
+        	<ul class="rmkcul">
+	{dede:type typeid='169,170,171,172,173,174'}<a href="[field:typelink /]" target="_blank"><li id="rmkc1" onmouseover="setTab('rmkc',1,6);" class="h3on">全部课程</li></a>{/dede:type}
+            {dede:type typeid='169'}<a href="[field:typelink /]" ><li id="rmkc1">开店基础</li></a>{/dede:type}
+            {dede:type typeid='170'}<a href="[field:typelink /]" ><li id="rmkc2">流量提升</li></a>{/dede:type}
+            {dede:type typeid='171'}<a href="[field:typelink /]" ><li id="rmkc2">成交突破</li></a>{/dede:type}
+            {dede:type typeid='172'}<a href="[field:typelink /]" ><li id="rmkc2">玩转运营</li></a>{/dede:type}
+            {dede:type typeid='173'}<a href="[field:typelink /]" ><li id="rmkc2">商家运营攻略</li></a>{/dede:type}
+            {dede:type typeid='174'}<a href="[field:typelink /]" ><li id="rmkc2">运营服务商</li></a>{/dede:type}
+            </ul>
+        </h3>
+	</div>
+    <div class="index_middle_c">
+    <ul class="con1" style="width:890px;">
+{dede:list pagesize='20' addfields='jiangshi,shichang' channelid='17'}
+  <li><a href="[field:arcurl/]" title="[field:title/]" target="_blank">[field:image/]<span class="v_ishd">高清</span><span class="v_time">[field:shichang/]</span><span class="v_bg"></span></a><span><a href="[field:arcurl/]" target="_blank">[field:title function='cn_substr(@me,30)'/]</a></span><p>讲师：[field:jiangshi/]</p></li>
+{/dede:list}
+    </ul>
+    <div class="clear"></div>
+	<div class="dede_pages pagegkk">
+   <ul class="pagelist">
+    {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+   </ul>
+  </div> 
+    </div>
+    <div class="clear"></div>
+    </div>
+</div>
+      <!--右侧列表开始-->
+	  <div style="float:right;width:290px;">
+      <div class="newslistright">
+		<p>最热课程推荐</p>
+		<ul>
+		 {dede:arclist row=7 orderby=pubdate type='image.' typeid='1'}
+			<li><span>[field:global.autoindex/]</span><a href="[field:arcurl/]" title="[field:title/]">[field:title/]</a></li>
+		 {/dede:arclist}
+		 
+		</ul>
+	</div>   
+	
+	<div class="newslistright2">
+		<p>最热课程推荐</p>
+		<ul>
+			 {dede:arclist row=4 orderby=pubdate type='image.' typeid='1'}
+	  <li>
+	<a href="[field:arcurl/]" title="[field:title/]" target="_blank" >[field:image/]<span class="v_ishd">高清</span><span class="v_time">41:18</span><span class="v_bg"></span></a><span><a href="[field:arcurl/]" target="_blank">[field:title/]</a></span>
+	</li>
+	 {/dede:arclist}
+		</ul>
+	</div> 
+      <!--右侧列表结束-->
+      <!--右侧列表开始-->
+      <div class="shipinliebiao_bg_right">
+        <div class="shipinliebiao_bg_right_qu">
+          <div class="shipinliebiao_bg_right_blue"></div>
+          <p class="shipinliebiao_bg_right_p1">学习计划地图</p>
+        </div>
+        <ul class="shipinliebiao_bg_right_ul fix-clear">
+        <li><a href="###" style="color:#e01515">农业课程</a></style></li>
+          <li><a href="###" target="_blank" >宝贝上架</a></style></li>
+          <li><a href="###" target="_blank">图片拍摄</a></li>
+          <li><a href="###" target="_blank">网店货源</a></li>
+          <li><a href="###" target="_blank">PS技巧</a></li>
+          <li><a href="###" target="_blank">直通车</a></li>
+          <li><a href="###" target="_blank">免费引流</a></li>
+          <li><font color="#e01515"><a href="###" target="_blank" style="color:#e01515">手机淘宝</a></style></li>
+          <li><a href="###" target="_blank">标题优化</a></li>
+          <li><a href="###" target="_blank">催付技巧</a></li>
+          <li><a href="###" target="_blank">促销玩法</a></li>
+          <li><a href="###" target="_blank">宝贝详情</a></li>
+          <li><a href="###" target="_blank">店铺运营</a></li>
+      <li><a href="###" target="_blank" style="color:#e01515">一元疯抢</a></style></li>
+         <li><a href="###" target="_blank">直播专区</a></li>
+      
+        </ul>
+      </div>
+	  
+	  </div>
+      <!--右侧列表结束-->
+</div>
+<!--视频列表结束-->
+
+</div>
+<script type="text/javascript">
+var TabbedPanels1 = new Spry.Widget.TabbedPanels("fenlei");
+</script>
+<!--分类结束-->
+
+
+<!--footer1开始-->
+{dede:include filename="footer1.htm"/}
+<!--footer1结束-->
+<!--footer2开始-->
+{dede:include filename="footer2.htm"/}
+<!--footer2结束-->
+</body>
+</html>
